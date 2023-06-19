@@ -1,0 +1,127 @@
+
+
+@media screen and (max-width: 768px) {
+  .pokeImg {
+    position: absolute;
+    z-index: 3;
+    top: 35%;
+    left: 30%;
+    right: 0;
+  }
+  .nav-options > ul{
+   padding-left: 30px;
+  }
+
+  .erro_container{
+    width: auto;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .content-top{
+    border-radius: 10px;
+  }
+  .about_pokemon > ul > li > strong{
+    margin-left: -300px;
+  }
+  .about_specie > ul > li > b{
+    grid-column: 2;
+    margin-top: 16px;
+    margin-left: -300px;
+  }
+
+
+  .about_breeding > ul > li > b{
+    grid-column: 2;
+    margin-top: 16px;
+    margin-left: -800px;
+  }
+
+  .about_specie > ul > li {
+    padding: 10px;
+    padding-bottom: 20px;
+    padding-left: 150px;
+  }
+
+  .about_specie > ul > li > strong{
+    grid-column: 2;
+    margin-right: 350px;
+
+    color: black;
+  }
+}
+
+  @media screen and (max-width: 1440px) and (max-height: 2960px) {
+    .content-top {
+      padding-bottom: 100px;
+    }
+
+    .content-bot {
+      border-radius: 20px;
+      background-color: #fff;
+    }
+
+    .nav-options {
+      padding-top: 10px;
+    }
+
+    .nav-options > ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center; /* Alterado para centralizar os botões */
+    }
+
+    .nav-options > ul > li {
+      margin-right: 5px;
+      list-style: none;
+    }
+
+    .btn {
+      background-color: transparent;
+      border: none;
+      color: black;
+      font-size: 16px;
+      padding: 10px 12px; /* Ajustado o espaçamento interno dos botões */
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .btn:hover {
+      border-bottom-color: grey;
+    }
+
+    .btn.active {
+      border-bottom-color: blue;
+    }
+
+    .pokeImg {
+      top: 30%;
+      left: 35%;
+    }
+
+    .nav-options > ul {
+      padding-left: 20px;
+    }
+
+    .about_specie > ul > li > b,
+    .about_breeding > ul > li > b {
+      margin-left: -190px;
+    }
+
+    .about_specie > ul > li {
+      padding-left: 100px;
+    }
+
+    .about_specie > ul > li > strong {
+      margin-right: 250px;
+    }
+
+    .about_pokemon > ul > li > strong {
+      margin-left: -50px;
+    }
+}

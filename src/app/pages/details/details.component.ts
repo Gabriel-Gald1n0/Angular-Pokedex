@@ -9,7 +9,7 @@ import { PokemonService } from 'src/app/services/pokemon.service';
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.css']
+  styleUrls: ['./details.component.css', './details.component.responsive.css']
 })
 export class DetailsComponent implements OnInit {
 
