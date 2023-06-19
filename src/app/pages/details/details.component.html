@@ -1,0 +1,170 @@
+<div class="pokecard" *ngIf="isloading">
+  <div *ngIf="pokemon" class="content-top {{ pokemon[0].types[0]?.type.name}}">
+    <div class="nav">
+
+    <ul>
+        <li class="left"><a href="javascript:void(0)" (click)="goToBeforePokemon()">
+          <img src="/assets/icons/arrow-left.png" alt="arrow icon" width="28px" class="arrow-image">
+        </a></li>
+
+        <li><a [routerLink]="['']">
+          <img src="/assets/icons/pokeball.png" alt="pokebola icon" height="25px" class="pokeball-image">
+        </a></li>
+
+        <li class="right"><a href="javascript:void(0)" (click)="goToNextPokemon()">
+        <img src="/assets/icons/arrow-right.png" alt="arrow icon" width="28px" class="arrow-image">
+        </a></li>
+    </ul>
+
+    </div>
+
+    <div class="pokeTitle slideInDown">
+
+      <span class="pokeName"> {{pokemon[0]?.name| uppercase}}</span>
+         <div class="pokeDetail">
+          <ol class="pokeTypes">
+            <li *ngFor="let value of pokemon[0]?.types" class="pokeType {{value.type.name}}">{{value.type.name | uppercase}}</li>
+          </ol>
+         </div>
+      <span class="pokeNumber">#{{ pokemon[0]?.id }}</span>
+    </div>
+
+</div>
+
+ <div class="pokeImg">
+        <img [src]="pokemon[0]?.sprites.other.dream_world.front_default" width="200px" height="200px" alt="{{pokemon[0]?.name}}" class="slideInDown ">
+      </div>
+
+<div class="content-bot">
+      <div class="nav-options slideInDown">
+        <ul>
+          <li><button #btnAbout id="btnAbout" class="btn" [routerLink]="" (click)="toggleActive(btnAbout,'divAbout')">
+            About
+          </button></li>
+
+          <li><button #btnStats class="btn" [routerLink]="" (click)="toggleActive(btnStats, 'divStats')">
+            Base Stats
+          </button></li>
+
+          <li><button #btnEvolution class="btn" [routerLink]="" (click)="toggleActive(btnEvolution, 'divEvolution')">
+            Evolution
+          </button></li>
+
+          <li><button #btnMoves class="btn" [routerLink]="" (click)="toggleActive(btnMoves, 'divMoves')">
+            Moves
+          </button></li>
+      </ul>
+      </div>
+        <div class="dados">
+
+          <div id="divAbout" *ngIf="activeDiv === 'divAbout'" class="fadeIn">
+            <!-- Conteúdo da div About -->
+            <p class="description">{{getFirstEnglishFlavorText(pokemon[1]?.flavor_text_entries) | uppercase}}</p>
+
+            <div class="about_pokemon">
+              <h3>Abilities</h3>
+              <ul>
+                <li *ngFor="let value of pokemon[0].abilities">
+                  {{value.ability.name | uppercase}}
+                </li>
+                <br>
+                <li>HEIGHT: <strong>{{pokemon[0]?.height}}</strong> </li>
+                <br>
+                <li>WEIGHT: <strong>{{pokemon[0]?.weight}}</strong> </li>
+              </ul>
+            </div>
+
+            <div class="about_breeding">
+              <h3>Breeding</h3>
+              <ul>
+                <li><p>Gender </p><b>{{getPokemonGender(pokemon[1].gender_rate) | uppercase}}</b></li>
+
+                <li><p>Habitat </p><b>{{pokemon[1].habitat.name | uppercase}}</b></li>
+
+                  <h4>Egg Groups: </h4>
+                <li *ngFor="let value of pokemon[1].egg_groups">{{value.name}}</li>
+              </ul>
+            </div>
+        </div>
+
+        <div id="divStats" *ngIf="activeDiv === 'divStats'">
+          <!-- Conteúdo da div Stats -->
+          <div class="about_specie fadeIn">
+            <ul>
+              <li *ngFor="let value of pokemon[0].stats">
+                {{value.stat.name | uppercase}}
+                <strong>
+                  {{value.base_stat}}
+                </strong>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="divEvolution" *ngIf="activeDiv === 'divEvolution'" class="fadeIn">
+          <!-- Conteúdo da div Evolution -->
+          <h3>Evolution Chain</h3>
+          <ul class="evolution_container">
+            <ng-container *ngIf="pokemon[2]?.chain?.species">
+              <li>
+                <p>{{ pokemon[2].chain.species.name }}</p>
+                <img [src]="" alt="{{ pokemon[2].chain.species.name }}">
+              </li>
+            </ng-container>
+
+            <ng-container *ngFor="let evolution1 of pokemon[2]?.chain?.evolves_to">
+              <li *ngIf="pokemon[2].id === pokemon[0].id">
+                <p>Level: {{ evolution1.evolution_details[0]?.min_level }}</p>
+                <p>{{ evolution1.species.name }}</p>
+                <img [src]="" alt="{{ evolution1.species.name }}">
+              </li>
+              <ng-container *ngFor="let evolution2 of evolution1.evolves_to">
+                <li *ngIf="pokemon[2].id === pokemon[0].id">
+                  <p>Level: {{ evolution2.evolution_details[0]?.min_level }}</p>
+                  <p>{{ evolution2.species.name }}</p>
+                  <img [src]="" alt="{{ evolution2.species.name }}">
+                </li>
+              </ng-container>
+            </ng-container>
+          </ul>
+        </div>
+
+        <div id="divMoves" *ngIf="activeDiv === 'divMoves'" class="fadeIn">
+          <!-- Conteúdo da div Moves -->
+          <div class="div_movies">
+          <h3>Best Movies</h3>
+            <ul>
+              <li *ngFor="let value of randomMoves">
+                <strong>
+                  {{value.move.name}}
+                </strong>
+              </li>
+            </ul>
+
+            <h3>Best Itens</h3>
+              <ul *ngIf="pokemon && pokemon[0]?.held_items">
+                <ng-container *ngIf="pokemon[0]?.held_items.length > 0; else noItems">
+                    <li *ngFor="let value of pokemon[0].held_items">
+                      <strong>{{ value.item?.name }}</strong>
+                    </li>
+                </ng-container>
+                <ng-template #noItems>
+                  <strong>No items found.</strong>
+                </ng-template>
+              </ul>
+          </div>
+        </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="erro_container" *ngIf="apiError">
+  <li>
+  <a [routerLink]="['']">
+  <img src="/assets/icons/pikachu-erro.jpg" alt="erro na mostragem do pokemon">
+  </a>
+  <p>Ops, houve algum erro na mostragem do Pokemon.</p>
+  </li>
+</div>
+

@@ -1,0 +1,8 @@
+<div class="search">
+  <form (submit)="search($event, input.value)">
+    <input type="text" class="search-input" #input (input)="onInputChange(input.value)" (keyup)="search($event, input.value)" placeholder="Buscar Pokemon...">
+    <button type="submit" class="search-button">
+      <img src="/assets/icons/icons8-search.svg" alt="Ícone de busca">
+    </button>
+  </form>
+</div>

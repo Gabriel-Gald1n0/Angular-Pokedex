@@ -1,0 +1,411 @@
+.content-top{
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  padding-bottom: 150px;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* BOTÕES */
+.nav{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+
+.nav > ul{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.nav > ul > li{
+  margin-right: 20px;
+  list-style: none;
+}
+
+.nav > a{
+  text-decoration: none;
+}
+
+.nav a:hover img.pokeball-image {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra à imagem ao passar o mouse */
+  border-radius: 50%;
+}
+
+.nav a:active img.arrow-image {
+  transform: scale(0.9); /* Reduz o tamanho da imagem ao ser clicada */
+}
+
+.nav > ul > li.right {
+  margin-left: auto;
+}
+
+.nav > ul > li.left {
+  margin-left: 30px;
+}
+
+/* TITULO */
+
+.pokeTitle {
+  border: 1px solid white;
+  margin: 0.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+
+
+  display: grid;
+  grid-template-columns: 1fr auto; /* Define duas colunas, a primeira com tamanho flexível e a segunda com tamanho automático */
+  align-items: center;
+  align-items: flex-start;
+
+
+  color: #fff;
+}
+
+.pokeName {
+  text-transform: capitalize;
+  margin-bottom: 0.625rem;
+  font-size: 25px;
+  grid-column: 1;
+}
+
+.pokeNumber {
+  text-align: right;
+  font-size: 1rem;
+  margin-left: auto;
+  margin-top: -15px;
+}
+
+.pokeDetail {
+  grid-column: 1; /* Ocupa a primeira coluna */
+  margin-right: auto;
+}
+
+.pokeTypes {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.pokeType {
+  border-radius: 10px;
+  padding: 0.25rem 0.5rem;
+  margin: 0.25rem 0;
+  font-size: 12px;
+  opacity: 0.9;
+  margin-right: 10px;
+  list-style-type: none;
+  filter: brightness(1.1);
+}
+
+.pokeTitle img.pokeImg {
+  max-width: 100%;
+  height: 70px;
+}
+
+
+/* BOTÕES */
+
+.content-bot{
+  border-radius: 20px;
+  background-color: #fff; /* Cor de fundo da content-bot */
+}
+
+.nav-options {
+  padding-top: 10px;
+}
+
+.nav-options > ul{
+  display: flex;
+  flex-direction: row;
+  padding-left: 28%;
+}
+
+.nav-options > ul > li{
+  margin-right: 10px;
+  list-style: none;
+}
+
+.btn {
+  background-color: transparent;
+  border: none;
+  color: black; /* cor do texto */
+  font-size: 16px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  border-bottom: 2px solid transparent; /* Adiciona uma linha transparente abaixo do botão */
+  transition: border-color 0.2s;
+}
+.btn:hover {
+  border-bottom-color: grey;
+}
+
+.btn.active{
+  border-bottom-color: blue; /* Define a cor azul para a borda inferior quando o botão estiver ativo */
+}
+
+
+/* TABELA COM DADOS */
+.description{
+  color: gray;
+}
+.dados{
+  padding: 1rem;
+  margin: 1rem;
+  margin-bottom: 20px;
+}
+
+
+.about_specie > ul > li{
+  color: grey;
+}
+
+.about_specie > ul > li {
+  display: grid;
+  grid-template-columns: 1fr ;
+  align-items: flex-start;
+  list-style: none;
+  padding: 10px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+}
+.about_specie > ul > li > strong{
+  grid-column: 2;
+  margin-right: 140px;
+
+  color: black;
+}
+
+
+.about_breeding > ul > li{
+  color: grey;
+}
+
+.about_breeding > ul > li{
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  align-items: flex-start;
+
+  list-style: none;
+}
+
+.about_breeding > ul > li > b{
+  grid-column: 2;
+  margin-top: 16px;
+  margin-left: -250px;
+  color: black;
+}
+
+.about_pokemon > ul > li{
+  color: grey;
+}
+
+.about_pokemon > ul > li > strong{
+  grid-column: 2;
+  margin-left: -140px;
+
+  color: black;
+}
+
+.about_pokemon > ul > li{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  align-items: flex-start;
+
+  list-style: none;
+}
+
+.evolution_container >li{
+  list-style: none;
+}
+
+.div_movies{
+  padding-left: 90px;
+}
+
+.div_movies > h3{
+  font-size: 25px;
+}
+
+.div_movies > ul{
+  font-size: 20px;
+}
+
+/*ORGANIZAÇÃO DAS DIVS*/
+.pokecard {
+  position: relative;
+}
+
+.content-bot {
+  position: absolute;
+  top: 90%;
+  left: 0;
+  right: 0;
+}
+
+.content-top {
+  z-index: 1;
+}
+
+.content-bot {
+  z-index: 2;
+}
+
+.pokeImg {
+  position: absolute;
+  z-index: 3;
+  top: 35%;
+  left: 38%;
+  right: 0;
+}
+/*Container de ERRO*/
+
+.erro_container > li > a > img{
+  border: 1px solid black;
+  border-radius: 10px;
+}
+.erro_container > li > p{
+  margin-top: 10px;
+  margin-left: 17px;
+}
+
+
+@media screen and (max-width: 768px) {
+  .pokeImg {
+    position: absolute;
+    z-index: 3;
+    top: 35%;
+    left: 30%;
+    right: 0;
+  }
+  .nav-options > ul{
+   padding-left: 30px;
+  }
+
+  .erro_container{
+    width: auto;
+    height: auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .content-top{
+    border-radius: 10px;
+  }
+  .about_pokemon > ul > li > strong{
+    margin-left: -300px;
+  }
+  .about_specie > ul > li > b{
+    grid-column: 2;
+    margin-top: 16px;
+    margin-left: -300px;
+  }
+
+
+  .about_breeding > ul > li > b{
+    grid-column: 2;
+    margin-top: 16px;
+    margin-left: -800px;
+  }
+
+  .about_specie > ul > li {
+    padding: 10px;
+    padding-bottom: 20px;
+    padding-left: 150px;
+  }
+
+  .about_specie > ul > li > strong{
+    grid-column: 2;
+    margin-right: 350px;
+
+    color: black;
+  }
+}
+
+  @media screen and (max-width: 1440px) and (max-height: 2960px) {
+    .content-top {
+      padding-bottom: 100px;
+    }
+
+    .content-bot {
+      border-radius: 20px;
+      background-color: #fff;
+    }
+
+    .nav-options {
+      padding-top: 10px;
+    }
+
+    .nav-options > ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center; /* Alterado para centralizar os botões */
+    }
+
+    .nav-options > ul > li {
+      margin-right: 5px;
+      list-style: none;
+    }
+
+    .btn {
+      background-color: transparent;
+      border: none;
+      color: black;
+      font-size: 16px;
+      padding: 10px 12px; /* Ajustado o espaçamento interno dos botões */
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .btn:hover {
+      border-bottom-color: grey;
+    }
+
+    .btn.active {
+      border-bottom-color: blue;
+    }
+
+    .pokeImg {
+      top: 30%;
+      left: 35%;
+    }
+
+    .nav-options > ul {
+      padding-left: 20px;
+    }
+
+    .about_specie > ul > li > b,
+    .about_breeding > ul > li > b {
+      margin-left: -190px;
+    }
+
+    .about_specie > ul > li {
+      padding-left: 100px;
+    }
+
+    .about_specie > ul > li > strong {
+      margin-right: 250px;
+    }
+
+    .about_pokemon > ul > li > strong {
+      margin-left: -50px;
+    }
+}
