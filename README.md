@@ -1,6 +1,9 @@
 # Angular-Pokedex
 a Pokedex project created with angular based on dribbble layout
 
+### *Preview Site*
+https://angular-pokedex1.netlify.app
+
 ### *home screen*
 ![image](https://github.com/Gabriel-Gald1n0/Angular-Pokedex/assets/92198024/1af84ba7-d1e2-4a87-bf88-565c4eaecc52)
 
