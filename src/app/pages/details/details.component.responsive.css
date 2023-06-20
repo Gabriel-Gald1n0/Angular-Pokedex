@@ -25,12 +25,6 @@
   .about_pokemon > ul > li > strong{
     margin-left: -300px;
   }
-  .about_specie > ul > li > b{
-    grid-column: 2;
-    margin-top: 16px;
-    margin-left: -300px;
-  }
-
 
   .about_breeding > ul > li > b{
     grid-column: 2;
@@ -45,10 +39,7 @@
   }
 
   .about_specie > ul > li > strong{
-    grid-column: 2;
-    margin-right: 350px;
-
-    color: black;
+    margin-right: 320px;
   }
 }
 
@@ -118,7 +109,7 @@
     }
 
     .about_specie > ul > li > strong {
-      margin-right: 250px;
+      margin-right: 150px;
     }
 
     .about_pokemon > ul > li > strong {
