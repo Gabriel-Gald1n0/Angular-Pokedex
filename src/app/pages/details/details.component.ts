@@ -124,6 +124,7 @@ export class DetailsComponent implements OnInit {
       });
     }
   }
+
   getFirstEnglishFlavorText(flavorTextEntries: any[]): string {
     if (flavorTextEntries && flavorTextEntries.length > 0) {
       const englishEntries = flavorTextEntries.filter(entry => entry.language.name === 'en');
